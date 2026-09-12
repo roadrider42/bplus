@@ -80,6 +80,11 @@
   .knopf-rand:hover { background: var(--hellgrau); }
   .knopf:focus-visible { outline: 3px solid var(--petrol); outline-offset: 3px; }
 
+  /* Zwei Wege in der Kopfzeile: anmelden, wer schon dabei ist -- anfragen,
+     wer noch nicht. Auf dem Telefon stehen sie untereinander. */
+  .kopfknoepfe { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .hinweis-klein { font-size: .9rem; margin-top: 1rem; }
+
   .augenbraue {
     display: inline-block; margin-bottom: 1.1rem;
     font-size: .85rem; font-weight: 600; letter-spacing: .06em;
@@ -135,6 +140,48 @@
   details[open] summary::after { content: "–"; }
   details p { margin: .2rem 0 1rem; }
 
+
+  /* Probeabschnitt: eine echte Lerneinheit, anklickbar, ohne Konto.
+     Farben und Radien wie im ganzen Dokument aus dem Style Guide. */
+  .vorspann-klein { max-width: 42rem; }
+  .probe-karte {
+    background: var(--grund); border: 1px solid var(--rand);
+    border-left: 4px solid var(--petrol);
+    border-radius: 6px; padding: 1.75rem 2rem; margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  }
+  .probe-karte p:last-child { margin-bottom: 0; }
+
+  .frage { margin-bottom: 2rem; }
+  .frage h3 { color: var(--schwarz); margin-bottom: .9rem; }
+  .stufe {
+    display: inline-block; margin-bottom: .5rem;
+    font-size: .75rem; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--petrol);
+  }
+  .optionen { display: grid; gap: .6rem; }
+  .option {
+    display: flex; align-items: center; text-align: left;
+    width: 100%; min-height: 52px; padding: .8rem 1.1rem;
+    font: inherit; color: var(--dunkelgrau);
+    background: var(--grund); border: 1px solid var(--rand);
+    border-radius: 6px; cursor: pointer;
+    transition: border-color .15s, background-color .15s;
+  }
+  .option:hover:not([disabled]) { border-color: var(--petrol); }
+  .option:focus-visible { outline: 3px solid var(--petrol); outline-offset: 2px; }
+  .option[disabled] { cursor: default; }
+  /* Richtig und falsch nie nur ueber Farbe: jede Option bekommt ein Zeichen. */
+  .option.richtig { border-color: var(--petrol); border-width: 2px; background: #EAF1F1; font-weight: 600; }
+  .option.richtig::after { content: "✓"; margin-left: auto; padding-left: 1rem; color: var(--petrol); font-weight: 700; }
+  .option.falsch { border-color: var(--ui-rot); border-width: 2px; background: #F7EDED; }
+  .option.falsch::after { content: "✕"; margin-left: auto; padding-left: 1rem; color: var(--ui-rot); font-weight: 700; }
+  .beleg {
+    margin: .9rem 0 0; padding: .9rem 1.1rem;
+    background: var(--warmgrau); border-radius: 6px; font-size: .95rem;
+  }
+  .quellzeile { font-size: .9rem; margin-top: 2.5rem; }
+
   .abschluss { background: var(--hellgrau); }
   .abschluss .huelle { max-width: 46rem; }
 
@@ -155,7 +202,10 @@
 <header>
   <div class="huelle kopf">
     <div class="marke">Büssemaker&nbsp;PLUS<small><i></i>Akademie</small></div>
-    <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
+    <div class="kopfknoepfe">
+      <a class="knopf knopf-rand" href="https://app.plinyoo.com/restaurants/public/8c53dece-d7f7-4d3a-8109-38a14e63a763">Anmelden</a>
+      <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
+    </div>
   </div>
 </header>
 
@@ -172,7 +222,7 @@
          Telefon verfügbar ist, wenn die Frage vor Ort auftritt.</p>
       <div class="knopfreihe">
         <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
-        <a class="knopf knopf-rand" href="#themen">Themen ansehen</a>
+        <a class="knopf knopf-rand" href="#probe">Lerneinheit ansehen</a>
       </div>
     </div>
   </section>
@@ -202,6 +252,59 @@
              muss und welche Wartungsintervalle tatsächlich tragen.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="hell" id="probe">
+    <div class="huelle">
+      <h2>So sieht eine Lerneinheit aus</h2>
+      <p class="vorspann-klein">Eine echte Karte aus dem Thema Mietrecht mit ihren drei Fragen.
+         Lesen, antworten, sehen warum &mdash; ohne Anmeldung.</p>
+
+      <div class="probe-karte">
+        <p>Der E-Check wird auch als „TÜV für die elektrischen Anlagen“ bezeichnet. Ein zertifizierter Elektriker prüft die gesamte elektrische Anlage einer Immobilie: Verkabelung, Sicherungskasten und Sicherung, Steckdosen, Raumbeleuchtung und sonstige Installationen.</p>
+        <p>Funktioniert alles ordnungsgemäß, versieht der Elektriker den Sicherungskasten mit einem Siegel, das die Gebrauchstauglichkeit bestätigt.</p>
+        <p>Der Nutzen für den Vermieter: Der E-Check dokumentiert den Zustand der Anlage und schützt vor Haftungsansprüchen von Mietern, die später behaupten, die Anlage sei nicht sicher gewesen.</p>
+      </div>
+
+      <div class="frage">
+        <span class="stufe">Stufe 1 · Erinnern</span>
+        <h3>Wer führt einen E-Check durch, und was wird dabei geprüft?</h3>
+        <div class="optionen">
+          <button type="button" class="option" data-richtig="0">Ein Sachverständiger, der nur den Sicherungskasten und die Sicherungen prüft</button>
+          <button type="button" class="option" data-richtig="1">Ein zertifizierter Elektriker, der die gesamte elektrische Anlage prüft</button>
+          <button type="button" class="option" data-richtig="0">Der Hausmeister, der Steckdosen und Raumbeleuchtung in Augenschein nimmt</button>
+          <button type="button" class="option" data-richtig="0">Ein Mitarbeiter des TÜV, der die Verkabelung des Gebäudes abnimmt</button>
+        </div>
+        <p class="beleg" hidden><b>Beleg aus der Quelle:</b> &bdquo;Dabei prüft ein zertifizierter Elektriker die gesamte elektrische Anlage einer Immobilie.&ldquo;</p>
+      </div>
+
+      <div class="frage">
+        <span class="stufe">Stufe 2 · Anwenden</span>
+        <h3>Ein Elektriker hat geprüft, alles ist in Ordnung. Woran erkennt man das später?</h3>
+        <div class="optionen">
+          <button type="button" class="option" data-richtig="1">Am Siegel auf dem Sicherungskasten, das die Gebrauchstauglichkeit bestätigt</button>
+          <button type="button" class="option" data-richtig="0">An einem Vermerk im Mietvertrag, den beide Seiten unterschreiben müssen</button>
+          <button type="button" class="option" data-richtig="0">An einer Plombe an jeder geprüften Steckdose der jeweiligen Einheit</button>
+          <button type="button" class="option" data-richtig="0">An einer Eintragung im Grundbuch des geprüften Objekts</button>
+        </div>
+        <p class="beleg" hidden><b>Beleg aus der Quelle:</b> &bdquo;versieht der Elektriker den Sicherungskasten mit einem entsprechenden Siegel, das die Gebrauchstauglichkeit bestätigt&ldquo;</p>
+      </div>
+
+      <div class="frage">
+        <span class="stufe">Stufe 3 · Begründen</span>
+        <h3>Warum schützt ein E-Check den Vermieter vor späteren Vorwürfen des Mieters?</h3>
+        <div class="optionen">
+          <button type="button" class="option" data-richtig="0">Weil der Mieter nach einem E-Check keine Mängel mehr anzeigen darf</button>
+          <button type="button" class="option" data-richtig="0">Weil die Haftung mit dem Siegel auf den prüfenden Elektriker übergeht</button>
+          <button type="button" class="option" data-richtig="1">Weil er den Zustand der Anlage dokumentiert und damit belegbar macht</button>
+          <button type="button" class="option" data-richtig="0">Weil der E-Check die Gebäudeversicherung zur Zahlung verpflichtet</button>
+        </div>
+        <p class="beleg" hidden><b>Beleg aus der Quelle:</b> &bdquo;Der E-Check dokumentiert den Zustand der elektrischen Anlage und schützt Vermieter vor Haftungsansprüchen durch Mieter, die später behaupten, die Anlage sei nicht sicher gewesen.&ldquo;</p>
+      </div>
+
+      <p class="quellzeile">Quelle dieser Karte: ivv-voest.de, veröffentlicht 02.03.2020,
+         abgerufen 24.06.2026. Jede Karte trägt ihre Quelle mit.</p>
     </div>
   </section>
 
@@ -307,7 +410,10 @@
          welche Themen als Nächstes entstehen.</p>
       <div class="knopfreihe">
         <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
+        <a class="knopf knopf-rand" href="https://app.plinyoo.com/restaurants/public/8c53dece-d7f7-4d3a-8109-38a14e63a763">Zum Lernbereich</a>
       </div>
+      <p class="hinweis-klein">„Zum Lernbereich" ist für Teilnehmer, die schon
+         eingeladen sind. Wer noch keinen Zugang hat, fragt ihn links an.</p>
     </div>
   </section>
 
@@ -330,5 +436,26 @@
   </div>
 </footer>
 
+
+<script>
+  // Eine Antwort wird geprueft, sobald sie angetippt ist. Danach zeigt die
+  // Frage die richtige Antwort und den Beleg aus der Quelle -- genau das ist
+  // der Lernvorgang: antworten, dann sehen warum.
+  for (const frage of document.querySelectorAll('.frage')) {
+    const optionen = [...frage.querySelectorAll('.option')];
+    const beleg = frage.querySelector('.beleg');
+    for (const option of optionen) {
+      option.addEventListener('click', () => {
+        if (optionen.some((o) => o.disabled)) return;
+        for (const o of optionen) {
+          o.disabled = true;
+          if (o.dataset.richtig === '1') o.classList.add('richtig');
+          else if (o === option) o.classList.add('falsch');
+        }
+        if (beleg) beleg.hidden = false;
+      });
+    }
+  }
+</script>
 </body>
 </html>
