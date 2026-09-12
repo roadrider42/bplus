@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seite nicht gefunden – Büssemaker PLUS Akademie</title>
+<meta name="description" content="Über 20 Jahre Sachverständigenpraxis, in kurzen Lerneinheiten. Feuchtigkeit, Risse, Flachdach – erkennen, einordnen, richtig reagieren.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  /* ---------------------------------------------------------------------
+     Farben und Maße stammen aus dem Style Guide von Büssemaker PLUS
+     (bau-gutachter/docs/9-Styleguide.md, Version 2). Nichts erfunden.
+
+     Logo-Rot #E3000F ist laut Style Guide ausdrücklich NICHT für
+     Schaltflächen, Flächen oder Überschriften erlaubt – nur Logo und
+     kleine Marker. Deshalb steht es hier genau einmal.
+     --------------------------------------------------------------------- */
+  :root {
+    --logo-rot:      #E3000F;
+    --ui-rot:        #8B1F1F;
+    --ui-rot-hover:  #5C1717;
+    --petrol:        #1E4D4F;
+    --schwarz:       #000000;
+    --dunkelgrau:    #333333;
+    --hellgrau:      #F4F4F4;
+    --warmgrau:      #E8E2DA;
+    --grund:         #FFFFFF;
+    --rand:          #DFDFDF;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    /* Inter laut Style Guide. Kein Google-Fonts-Aufruf: eine Seite für ein
+       deutsches Unternehmen soll beim ersten Laden keine Verbindung in die
+       USA aufbauen. Wer Inter installiert hat, sieht Inter. */
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--dunkelgrau);
+    background: var(--grund);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { line-height: 1.2; margin: 0 0 .6em; }
+  /* H1 ohne Farbe – Style Guide: „Keine Farbe! → strahlt Ruhe, Kompetenz
+     und Autorität aus." */
+  h1 { font-size: clamp(1.9rem, 5.6vw, 3rem); font-weight: 700; color: var(--schwarz); letter-spacing: -.015em; }
+  h2 { font-size: clamp(1.4rem, 4vw, 2.25rem); font-weight: 600; color: var(--schwarz); }
+  h3 { font-size: clamp(1.15rem, 2.6vw, 1.45rem); font-weight: 600; color: var(--dunkelgrau); margin-bottom: .4em; }
+  p  { margin: 0 0 1rem; }
+  a  { color: var(--petrol); }
+
+  .huelle { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: clamp(3rem, 8vw, 7.5rem) 0; }
+  section.hell  { background: var(--hellgrau); }
+  section.warm  { background: var(--warmgrau); }
+
+  /* Entwurfshinweis. Solange diese Seite ein Vorschlag ist und nicht das
+     Angebot von Büssemaker PLUS, muss das oben stehen und nicht im
+     Kleingedruckten. Eine Zeile entfernen macht die Seite echt. */
+  .entwurf {
+    background: var(--dunkelgrau); color: #fff;
+    font-size: .88rem; padding: .7rem 0;
+  }
+  .entwurf b { color: #fff; }
+
+  header { background: var(--grund); border-bottom: 1px solid var(--rand); }
+  .kopf { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; flex-wrap: wrap; }
+  .marke { font-weight: 700; font-size: 1.1rem; color: var(--schwarz); letter-spacing: .01em; }
+  /* Der einzige Ort, an dem das Logo-Rot erscheint. */
+  .marke i {
+    display: inline-block; width: .5rem; height: .5rem;
+    background: var(--logo-rot); margin-right: .45rem; vertical-align: .04em;
+  }
+  .marke small { display: block; font-size: .78rem; font-weight: 600; color: var(--petrol); letter-spacing: .08em; text-transform: uppercase; }
+
+  /* Schaltflächen: Radius 6px, Padding 14/24 laut Style Guide,
+     Mindesthöhe 44px, damit sie auf dem Telefon zu treffen sind. */
+  .knopf {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 48px; padding: .875rem 1.5rem;
+    border-radius: 6px; font-weight: 600; font-size: 1rem;
+    text-decoration: none; border: 2px solid transparent;
+    transition: background-color .15s, color .15s;
+  }
+  .knopf-voll { background: var(--ui-rot); color: #fff; }
+  .knopf-voll:hover { background: var(--ui-rot-hover); }
+  .knopf-rand { border-color: var(--petrol); color: var(--petrol); background: transparent; }
+  .knopf-rand:hover { background: var(--hellgrau); }
+  .knopf:focus-visible { outline: 3px solid var(--petrol); outline-offset: 3px; }
+
+  .augenbraue {
+    display: inline-block; margin-bottom: 1.1rem;
+    font-size: .85rem; font-weight: 600; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--petrol);
+  }
+  .titel { max-width: 46rem; }
+  .titel .vorspann { font-size: clamp(1.05rem, 2.3vw, 1.2rem); }
+  .knopfreihe { display: flex; flex-wrap: wrap; gap: .875rem; margin-top: 2rem; }
+
+  .raster { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 40rem) { .raster.zwei, .raster.drei, .raster.vier { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 58rem) { .raster.drei { grid-template-columns: repeat(3, 1fr); } .raster.vier { grid-template-columns: repeat(4, 1fr); } }
+
+  /* Karten laut Style Guide: Weiß, 1px Rand, weicher Schatten,
+     Icons Petrol, Titel Schwarz, Text Dunkelgrau. */
+  .karte {
+    background: var(--grund); border: 1px solid var(--rand);
+    border-radius: 6px; padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  }
+  .karte h3 { color: var(--schwarz); }
+  .karte p:last-child { margin-bottom: 0; }
+  .karte .rubrik { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--petrol); margin-bottom: .5rem; }
+
+  ol.schritte { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; }
+  @media (min-width: 52rem) { ol.schritte { grid-template-columns: repeat(3, 1fr); } }
+  ol.schritte li {
+    counter-increment: s; background: var(--grund); border: 1px solid var(--rand);
+    border-radius: 6px; padding: 2rem; box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  }
+  ol.schritte li::before {
+    content: counter(s); display: grid; place-items: center;
+    width: 2.25rem; height: 2.25rem; margin-bottom: 1rem;
+    border-radius: 6px; background: var(--petrol); color: #fff; font-weight: 700;
+  }
+  ol.schritte h3 { color: var(--schwarz); }
+
+  ul.punkte { list-style: none; padding: 0; margin: 0; }
+  ul.punkte li { position: relative; padding-left: 1.6rem; margin-bottom: .6rem; }
+  ul.punkte li::before {
+    content: ""; position: absolute; left: 0; top: .62em;
+    width: .5rem; height: .5rem; border-radius: 50%; background: var(--ui-rot);
+  }
+
+  details { border-bottom: 1px solid var(--rand); padding: .5rem 0; }
+  details summary {
+    cursor: pointer; font-weight: 600; color: var(--schwarz); list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    min-height: 48px;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: "+"; color: var(--ui-rot); font-weight: 700; font-size: 1.3rem; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: .2rem 0 1rem; }
+
+  .abschluss { background: var(--hellgrau); }
+  .abschluss .huelle { max-width: 46rem; }
+
+  footer { background: var(--dunkelgrau); color: #fff; padding: 3rem 0; }
+  footer h3 { color: #fff; font-size: 1rem; }
+  footer p { color: #fff; }
+  footer .traeger { max-width: 44rem; }
+  /* Style Guide erlaubt für Fußzeilenlinks „Petrol oder Hellgrau".
+     Petrol auf #333 ergibt 1,3:1 – unlesbar. Also Hellgrau: 11,5:1. */
+  footer a { color: var(--hellgrau); text-decoration: underline; }
+  .fussreihe { display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; align-items: center; justify-content: space-between; margin-top: 2rem; border-top: 1px solid #4d4d4d; padding-top: 1rem; }
+  .fussreihe nav { display: flex; flex-wrap: wrap; gap: 0 1.4rem; }
+  .fussreihe nav a { display: inline-flex; align-items: center; min-height: 44px; }
+</style>
+</head>
+<body>
+
+<div class="entwurf">
+  <div class="huelle">
+    <b>Entwurf.</b> Vorschlag von plinyoo für die Büssemaker PLUS GmbH –
+    noch nicht veröffentlicht, noch nicht abgestimmt.
+  </div>
+</div>
+
+<header>
+  <div class="huelle kopf">
+    <div class="marke">Büssemaker&nbsp;PLUS<small><i></i>Akademie</small></div>
+    <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="huelle titel">
+      <span class="augenbraue">Seite nicht gefunden</span>
+      <h1>Diese Seite gibt es nicht.</h1>
+      <p class="vorspann">Über 20 Jahre Sachverständigenpraxis für Schäden an Gebäuden –
+         aufbereitet in kurzen Lerneinheiten für die Menschen, die Schäden
+         als Erste sehen: Verwalter, Handwerker, Eigentümer.</p>
+      <p>Nicht als Seminar mit Terminzwang, sondern als Wissen, das auf dem
+         Telefon verfügbar ist, wenn die Frage vor Ort auftritt.</p>
+      <div class="knopfreihe">
+        <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
+        <a class="knopf knopf-rand" href="#themen">Themen ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hell" id="themen">
+    <div class="huelle">
+      <h2>Die ersten drei Themen</h2>
+      <p style="max-width:42rem">Jedes Thema besteht aus kurzen Lerneinheiten mit
+         Bildern aus echten Schadensfällen und einer Kontrollfrage am Ende.</p>
+      <div class="raster drei">
+        <div class="karte">
+          <span class="rubrik">Thema 1</span>
+          <h3>Feuchtigkeit und Schimmel</h3>
+          <p>Woran man die Ursache erkennt, bevor man saniert. Was dokumentiert
+             werden muss, damit eine Bewertung später belastbar ist.</p>
+        </div>
+        <div class="karte">
+          <span class="rubrik">Thema 2</span>
+          <h3>Rissbildungen</h3>
+          <p>Setzung, Materialfehler oder Bauablauf – dieselbe Erscheinung,
+             drei verschiedene Konsequenzen. Wie man sie unterscheidet.</p>
+        </div>
+        <div class="karte">
+          <span class="rubrik">Thema 3</span>
+          <h3>Flachdachschäden</h3>
+          <p>Undichtigkeit oder Systemfehler. Was bei der Begehung auffallen
+             muss und welche Wartungsintervalle tatsächlich tragen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="huelle">
+      <h2>Für wen</h2>
+      <div class="raster drei">
+        <div class="karte">
+          <h3>Hausverwaltungen</h3>
+          <p>Wer den Bestand betreut, entscheidet täglich über Dringlichkeit.
+             Die Akademie gibt den Mitarbeitenden die Begriffe dafür.</p>
+        </div>
+        <div class="karte">
+          <h3>Handwerksbetriebe</h3>
+          <p>Der Monteur auf dem Dach sieht den Schaden zuerst. Was er
+             richtig einordnet, spart eine Begutachtung.</p>
+        </div>
+        <div class="karte">
+          <h3>Eigentümer und Käufer</h3>
+          <p>Wer versteht, was er sieht, stellt beim Termin die Fragen,
+             auf die es ankommt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="warm">
+    <div class="huelle">
+      <h2>Warum aus dieser Hand</h2>
+      <div class="raster zwei">
+        <div>
+          <ul class="punkte">
+            <li><b>Unabhängig und neutral.</b> Die Inhalte folgen keinem Produkt und keinem Gewerk.</li>
+            <li><b>Technisch fundiert.</b> Über 20 Jahre in Bauphysik, Sanierung und Bewertung.</li>
+            <li><b>Aus echten Fällen.</b> Jede Einheit stammt aus einem Gutachten, nicht aus einem Lehrbuch.</li>
+            <li><b>Transparent erklärt.</b> Komplexe Zusammenhänge klar – das ist der Beruf.</li>
+          </ul>
+        </div>
+        <div>
+          <p>„Wir prüfen, damit Entscheidungen sicher werden.“ Der Satz gilt für
+             das Gutachten und für die Schulung. Ein Gutachten klärt einen Fall.
+             Eine Schulung klärt die nächsten hundert.</p>
+          <p>Dipl.-Ing. Architekt Martin Büssemaker, Sachverständiger für
+             Schäden an Gebäuden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="huelle">
+      <h2>So läuft es</h2>
+      <ol class="schritte">
+        <li>
+          <h3>Zugang erhalten</h3>
+          <p>Sie bekommen eine Einladung per E-Mail. Kein Download, keine
+             Installation – die Akademie läuft im Browser des Telefons.</p>
+        </li>
+        <li>
+          <h3>In kurzen Einheiten lernen</h3>
+          <p>Eine Lerneinheit dauert wenige Minuten. Was sitzt, kommt seltener
+             wieder; was wackelt, kommt zurück.</p>
+        </li>
+        <li>
+          <h3>Fortschritt sehen</h3>
+          <p>Sie sehen, welche Themen Ihr Team bearbeitet hat und wo
+             Nachschulung sinnvoll ist.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="hell">
+    <div class="huelle" style="max-width:48rem">
+      <h2>Häufige Fragen</h2>
+      <details>
+        <summary>Müssen wir Software installieren?</summary>
+        <p>Nein. Die Akademie läuft im Browser, auf dem Telefon wie am Rechner.
+           Ein Konto entsteht über eine Einladung.</p>
+      </details>
+      <details>
+        <summary>Wer schreibt die Inhalte?</summary>
+        <p>Die fachlichen Inhalte kommen aus der Sachverständigenpraxis von
+           Büssemaker PLUS. plinyoo stellt die Plattform, auf der sie laufen.</p>
+      </details>
+      <details>
+        <summary>Können wir eigene Themen ergänzen?</summary>
+        <p>Ja. Themen und Lerneinheiten lassen sich ergänzen, sobald ein
+           Thema angelegt ist.</p>
+      </details>
+      <details>
+        <summary>Was kostet das?</summary>
+        <p>Das steht noch nicht fest. Der Zugang ist derzeit auf eingeladene
+           Teilnehmer begrenzt.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="abschluss">
+    <div class="huelle">
+      <h2>Zugang anfragen</h2>
+      <p>Die Akademie ist im Aufbau. Wer jetzt dazukommt, bestimmt mit,
+         welche Themen als Nächstes entstehen.</p>
+      <div class="knopfreihe">
+        <a class="knopf knopf-voll" href="https://app.plinyoo.com/fruehe-mitgestalter?brand=plinyoo">Zugang anfragen</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="huelle">
+    <p class="traeger">Die Büssemaker PLUS Akademie läuft auf der Lernplattform
+       <a href="https://www.plinyoo.com">plinyoo</a>. Fachliche Inhalte:
+       Büssemaker PLUS GmbH. Betrieb der Plattform, Datenhaltung und
+       Rechtstexte: plinyoo.</p>
+    <div class="fussreihe">
+      <span>Entwurf – noch nicht veröffentlicht.</span>
+      <nav>
+        <a href="https://www.plinyoo.com/impressum">Impressum</a>
+        <a href="https://www.plinyoo.com/datenschutz">Datenschutz</a>
+        <a href="https://www.plinyoo.com/urheberrecht">Urheberrecht</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
